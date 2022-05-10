@@ -35,9 +35,9 @@ cmake
 ```
 conan-cpp-demo $ mkdir build && cd build
 ```
-### Run `conan install`, passing the directory where your _conanfile.txt_ is,
-### to download and install dependencies and generate the _conanbuildinfo.cmake_ used by _CMakeLists.txt_.
-### For example, run `conan install ..` if your _conanfile.txt_ is in the parent directory.
+### Run `conan install`, passing the directory where your `conanfile.txt` is,
+### to download and install dependencies and generate the `conanbuildinfo.cmake` used by `CMakeLists.txt`.
+### For example, run `conan install ..` if your `conanfile.txt` is in the parent directory.
 
 ```
 conan-cpp-demo/build$ conan install ..
@@ -46,7 +46,7 @@ conan-cpp-demo/build$ ls | grep build
 conanbuildinfo.cmake
 
 ```
-### create _CMakeLists.txt_ in project directory
+### create `CMakeLists.txt` in project directory
 ```
 conan-cpp-demo/build$ vim ../CMakeLists.txt
 
@@ -59,8 +59,8 @@ conan_basic_setup()
 add_executable(timer timer.cpp)
 target_link_libraries(timer ${CONAN_LIBS})
 ```
-### Run the build system, `cmake`, in the directory containing your _CMakeLists.txt_ to create the _Makefile_.
-### Run`make` to build your program using the generated _Makefile_.
+### Run the build system, `cmake`, in the directory containing your `CMakeLists.txt` to create the `Makefile`.
+### Run`make` to build your program using the generated `Makefile`.
 
 conan-cpp-demo/build$ cmake ..
 conan-cpp-demo/build$ make 
