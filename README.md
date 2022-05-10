@@ -1,7 +1,7 @@
 # conan-cpp-demo
 Example timer with POCO C++ libraries installed with conan C and C++ package manager
 
-### Add App Dependencies : poco
+#### Add App Dependencies : poco
 
 ```
 conan-cpp-demo$ conan remote list
@@ -20,7 +20,7 @@ poco/1.11.1
 poco/1.11.2
 
 ```
-### Create conanfile.txt 
+#### Create conanfile.txt 
 ```
 conan-cpp-demo$ vim conanfile.txt 
 
@@ -31,13 +31,13 @@ poco/1.8.1
 cmake
 
 ```
-### Create a build directory with `mkdir build`, and `cd build`.
+#### Create a build directory with `mkdir build`, and `cd build`.
 ```
 conan-cpp-demo $ mkdir build && cd build
 ```
-### Run `conan install`, passing the directory where your `conanfile.txt` is,
-### to download and install dependencies and generate the `conanbuildinfo.cmake` used by `CMakeLists.txt`.
-### For example, run `conan install ..` if your `conanfile.txt` is in the parent directory.
+#### Run `conan install`, passing the directory where your `conanfile.txt` is,
+#### to download and install dependencies and generate the `conanbuildinfo.cmake` used by `CMakeLists.txt`.
+#### For example, run `conan install ..` if your `conanfile.txt` is in the parent directory.
 
 ```
 conan-cpp-demo/build$ conan install ..
@@ -46,7 +46,7 @@ conan-cpp-demo/build$ ls | grep build
 conanbuildinfo.cmake
 
 ```
-### create `CMakeLists.txt` in project directory
+#### Create `CMakeLists.txt` in project directory
 ```
 conan-cpp-demo/build$ vim ../CMakeLists.txt
 
@@ -59,14 +59,14 @@ conan_basic_setup()
 add_executable(timer timer.cpp)
 target_link_libraries(timer ${CONAN_LIBS})
 ```
-### Run the build system, `cmake`, in the directory containing your `CMakeLists.txt` to create the `Makefile`.
-### Run`make` to build your program using the generated `Makefile`.
+#### Run the build system, `cmake`, in the directory containing your `CMakeLists.txt` to create the `Makefile`.
+#### Run`make` to build your program using the generated `Makefile`.
 ```
 conan-cpp-demo/build$ cmake ..
 conan-cpp-demo/build$ make 
   ... Linking CXX executable bin/timer
 ```
-### Run binary `timer`
+#### Run binary `timer`
 ```
 conan-cpp-demo/build$ ./bin/timer 
 Callback called after 250 milliseconds.
