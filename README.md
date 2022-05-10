@@ -7,6 +7,7 @@ Example timer with POCO C++ libraries installed with conan C and C++ package man
 $git clone https://github.com/AzaharSK/conan-cpp-demo.git
 $cd conan-cpp-demo
 conan-cpp-demo$ mkdir build && cd build
+conan-cpp-demo/build$ conan install ..
 conan-cpp-demo/build$ cmake ..
 conan-cpp-demo/build$ make 
 conan-cpp-demo/build$ ./bin/timer 
