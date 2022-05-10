@@ -4,6 +4,9 @@ Example timer with POCO C++ libraries installed with conan C and C++ package man
 #### Add App Dependencies : poco
 
 ```
+$git clone https://github.com/AzaharSK/conan-cpp-demo.git
+$cd conan-cpp-demo
+
 conan-cpp-demo$ conan remote list
 conancenter: https://center.conan.io [Verify SSL: True]
 
