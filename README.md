@@ -61,12 +61,13 @@ target_link_libraries(timer ${CONAN_LIBS})
 ```
 ### Run the build system, `cmake`, in the directory containing your `CMakeLists.txt` to create the `Makefile`.
 ### Run`make` to build your program using the generated `Makefile`.
-
+```
 conan-cpp-demo/build$ cmake ..
 conan-cpp-demo/build$ make 
   ... Linking CXX executable bin/timer
-
+```
 ### Run binary `timer`
+```
 conan-cpp-demo/build$ ./bin/timer 
 Callback called after 250 milliseconds.
 Callback called after 750 milliseconds.
