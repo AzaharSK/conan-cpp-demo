@@ -1,13 +1,13 @@
 # conan-cpp-demo
 Example timer with POCO C++ libraries installed with conan C and C++ package manager
 
-### App Dependencies : poco
+### Add App Dependencies : poco
 
 ```
-$ conan remote list
+conan-cpp-demo$ conan remote list
 conancenter: https://center.conan.io [Verify SSL: True]
 
-$ conan search poco* --remote=conancenter
+conan-cpp-demo$ conan search poco* --remote=conancenter
 Existing package recipes:
 
 poco/1.8.1
@@ -19,7 +19,10 @@ poco/1.11.0
 poco/1.11.1
 poco/1.11.2
 
-$ vim conanfile.txt 
+```
+### Create conanfile.txt 
+```
+conan-cpp-demo$ vim conanfile.txt 
 
 [requires]
 poco/1.8.1
@@ -27,13 +30,25 @@ poco/1.8.1
 [generators]
 cmake
 
-$ mkdir build && cd build
-build$ conan install ..
+```
+### Create a build directory with `mkdir build`, and `cd build`.
+```
+conan-cpp-demo $ mkdir build && cd build
+```
+### Run `conan install`, passing the directory where your _conanfile.txt_ is,
+### to download and install dependencies and generate the _conanbuildinfo.cmake_ used by _CMakeLists.txt_.
+### For example, run `conan install ..` if your _conanfile.txt_ is in the parent directory.
 
-build$ ls | grep build
+```
+conan-cpp-demo/build$ conan install ..
+
+conan-cpp-demo/build$ ls | grep build
 conanbuildinfo.cmake
 
-build$ vim ../CMakeLists.txt
+```
+### create _CMakeLists.txt_ in project directory
+```
+conan-cpp-demo/build$ vim ../CMakeLists.txt
 
 project(FoundationTimer)
 cmake_minimum_required(VERSION 2.8.12)
@@ -43,12 +58,16 @@ conan_basic_setup()
 
 add_executable(timer timer.cpp)
 target_link_libraries(timer ${CONAN_LIBS})
+```
+### Run the build system, `cmake`, in the directory containing your _CMakeLists.txt_ to create the _Makefile_.
+### Run`make` to build your program using the generated _Makefile_.
 
+conan-cpp-demo/build$ cmake ..
+conan-cpp-demo/build$ make 
+  ... Linking CXX executable bin/timer
 
-build$ cmake ..
-build$ make 
-
-build$ ./bin/timer 
+### Run binary `timer`
+conan-cpp-demo/build$ ./bin/timer 
 Callback called after 250 milliseconds.
 Callback called after 750 milliseconds.
 Callback called after 1250 milliseconds.
