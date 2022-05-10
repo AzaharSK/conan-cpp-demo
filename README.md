@@ -1,12 +1,21 @@
 # conan-cpp-demo
 Example timer with POCO C++ libraries installed with conan C and C++ package manager
 
-#### Add App Dependencies : poco
+## HOW TO BUILD
 
 ```
 $git clone https://github.com/AzaharSK/conan-cpp-demo.git
 $cd conan-cpp-demo
+conan-cpp-demo$ mkdir build && cd build
+conan-cpp-demo/build$ cmake ..
+conan-cpp-demo/build$ make 
+conan-cpp-demo/build$ ./bin/timer 
+Callback called after 250 milliseconds.
+Callback called after 750 milliseconds.
+```
 
+#### WHOLE STORY :: Add App Dependencies : poco 
+```
 conan-cpp-demo$ conan remote list
 conancenter: https://center.conan.io [Verify SSL: True]
 
